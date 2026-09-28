@@ -166,6 +166,7 @@ files += [
   'src/neural/backends/network_random.cc',
   'src/neural/backends/network_record.cc',
   'src/neural/backends/network_rr.cc',
+  'src/neural/backends/network_sparse.cc',
   'src/neural/backends/network_trivial.cc',
   'src/neural/memcache.cc',
   'src/neural/network_legacy.cc',
@@ -985,6 +986,11 @@ endif
   endif
 
   deps += cc.find_library('atomic', required: false)
+
+  ## ~~~~~~~~~~~~
+  ## Sparse Chess
+  ## ~~~~~~~~~~~~
+  deps += cc.find_library('sparse_chess', dirs: [meson.current_source_dir() / 'libs'], required: false)
 
 #############################################################################
 ## Main Executable
